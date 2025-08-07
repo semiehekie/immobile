@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM-Mobile</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/script.js" defer></script>
+    <script src="/js/index-repair.js" defer></script>
+
+ 
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+</head>
+<body>
+    <header>
+        <h1>IM-MOBILE</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Over ons</a></li>
+                <li><a href="#contact">Contact opnemen</a></li>
+                <li><a href="#social-media">Social Media</a></li>
+                <li><a href="reparatie.html">Reparatie Melden</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <h2>Welkom bij IM-Mobile</h2>
+            <p>Verkoop.<br>Reparatie.<br>Service.</p>
+        </section>
+        
+        <section id="reparatie-aanmelden">
+            <h2>Reparatie Aanmelden</h2>
+            <div id="reparatie-login-section">
+                <div class="repair-form-section">
+                    <h3>Inloggen</h3>
+                    <form id="index-loginForm">
+                        <div class="form-group">
+                            <label>Gebruikersnaam:</label>
+                            <input type="text" id="index-loginUsername" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Wachtwoord:</label>
+                            <input type="password" id="index-loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn">Inloggen</button>
+                    </form>
+                </div>
+                
+                <div class="repair-form-section">
+                    <h3>Registreren</h3>
+                    <form id="index-registerForm">
+                        <div class="form-group">
+                            <label>Gebruikersnaam:</label>
+                            <input type="text" id="index-regUsername" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" id="index-regEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Wachtwoord:</label>
+                            <input type="password" id="index-regPassword" required>
+                        </div>
+                        <button type="submit" class="btn">Registreren</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="reparatie-form-section" style="display: none;">
+                <p>Welkom <span id="index-welcomeUser"></span>! <button onclick="indexLogout()" class="btn btn-secondary">Uitloggen</button></p>
+                
+                <form id="index-repairForm">
+                    <div class="form-group">
+                        <label>Klant Naam:</label>
+                        <input type="text" id="index-klantNaam" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wat voor telefoon heb je?</label>
+                        <div class="telefoon-selectie">
+                            <div class="dropdown-group">
+                                <label for="index-telefoonMerk">Merk:</label>
+                                <select id="index-telefoonMerk" required>
+                                    <option value="">Selecteer merk</option>
+                                    <option value="Apple">Apple</option>
+                                    <option value="Samsung">Samsung</option>
+                                    <option value="Google">Google</option>
+                                    <option value="OnePlus">OnePlus</option>
+                                    <option value="Xiaomi">Xiaomi</option>
+                                    <option value="Huawei">Huawei</option>
+                                    <option value="Oppo">Oppo</option>
+                                    <option value="Nothing">Nothing</option>
+                                    <option value="Fairphone">Fairphone</option>
+                                    <option value="Sony">Sony</option>
+                                    <option value="LG">LG</option>
+                                    <option value="Nokia">Nokia</option>
+                                    <option value="Motorola">Motorola</option>
+                                    <option value="HTC">HTC</option>
+                                    <option value="BlackBerry">BlackBerry</option>
+                                    <option value="Asus">Asus</option>
+                                    <option value="Vivo">Vivo</option>
+                                    <option value="TCL">TCL</option>
+                                    <option value="Honor">Honor</option>
+                                    <option value="Anders">Anders</option>
+                                </select>
+                            </div>
+                            <div class="dropdown-group">
+                                <label for="index-telefoonModel">Model:</label>
+                                <select id="index-telefoonModel" required disabled>
+                                    <option value="">Selecteer eerst een merk</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="index-andersTelefoonBeschrijving" style="display: none; margin-top: 10px;">
+                            <label>Beschrijf je telefoon:</label>
+                            <input type="text" id="index-andersTelefoonTekst" placeholder="Bijv. Huawei P30, OnePlus 9, etc.">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Wat is er mis met je telefoon?</label>
+                        <div class="problem-options">
+                            <div class="checkbox-label">
+                                <input type="radio" name="index-probleem" value="Scherm kapot" id="index-schermKapot">
+                                <span>Scherm kapot</span>
+                            </div>
+                            <div class="checkbox-label">
+                                <input type="radio" name="index-probleem" value="Batterij probleem" id="index-batterij">
+                                <span>Batterij probleem</span>
+                            </div>
+                            <div class="checkbox-label">
+                                <input type="radio" name="index-probleem" value="Laadpoort defect" id="index-laadpoort">
+                                <span>Laadpoort defect</span>
+                            </div>
+                            <div class="checkbox-label">
+                                <input type="radio" name="index-probleem" value="Camera werkt niet" id="index-camera">
+                                <span>Camera werkt niet</span>
+                            </div>
+                            <div class="checkbox-label">
+                                <input type="radio" name="index-probleem" value="Geluid problemen" id="index-geluid">
+                                <span>Geluid problemen</span>
+                            </div>
+                            <div class="checkbox-label">
+                                <input type="radio" name="index-probleem" value="Anders" id="index-anders">
+                                <span>Anders</span>
+                            </div>
+                        </div>
+                        <div id="index-andersBeschrijving" style="display: none; margin-top: 10px;">
+                            <label>Beschrijf het probleem:</label>
+                            <textarea id="index-andersTekst" rows="3" placeholder="Beschrijf wat er mis is met je telefoon..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Extra opmerkingen (optioneel):</label>
+                        <textarea id="index-beschrijving" rows="3" placeholder="Eventuele extra informatie..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Datum:</label>
+                        <input type="date" id="index-datum" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tijd:</label>
+                        <select id="index-tijd" required>
+                            <option value="">Selecteer eerst een datum</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn">Reparatie Inplannen En Offerte Aanvragen</button>
+                </form>
+            </div>
+            
+            <div id="index-bevestigingSection" style="display: none;">
+                <h3>Bevestig je gegevens</h3>
+                <div class="confirmation-details">
+                    <p><strong>Klant:</strong> <span id="index-confirmKlantNaam"></span></p>
+                    <p><strong>Telefoon:</strong> <span id="index-confirmTelefoonModel"></span></p>
+                    <p><strong>Probleem:</strong> <span id="index-confirmProbleem"></span></p>
+                    <p><strong>Beschrijving:</strong> <span id="index-confirmBeschrijving"></span></p>
+                    <p><strong>Datum:</strong> <span id="index-confirmDatum"></span></p>
+                    <p><strong>Tijd:</strong> <span id="index-confirmTijd"></span></p>
+                </div>
+                <div class="confirmation-buttons">
+                    <button onclick="indexBevestigReparatie()" class="btn">Bevestigen</button>
+                    <button onclick="indexWijzigGegevens()" class="btn btn-secondary">Wijzigen</button>
+                </div>
+            </div>
+            
+            <div id="index-message"></div>
+        </section>
+        
+        <section id="navigation">
+            <ul>
+                <li>Reparatie melden</li>
+                <li>Verkoop</li>
+                <li>Service</li>
+            </ul>
+        </section>
+        <section id="about">
+            <h2>Over ons</h2>
+            <p>IM-Mobile staat voor u klaar. Iedere reparatie lossen wij voor u op.</p>
+            <p>Onze winkel is gevestigd in Hardenberg, waar ons team klaarstaat om u te helpen.</p>
+            <p>Schade aan uw smartphone of tablet?<br>Bij ons zijn de onderzoekkosten gratis.</p>
+        </section>
+        <section id="team">
+            <h2>Ons Team</h2>
+            <p>Maak kennis met ons team van experts die klaarstaan om u te helpen.</p>
+            <div class="team-list">
+                <div id="team-member"><img src="/img/habib-gholami.jpg" alt="Habib Gholami"><h3>Habib Gholami</h3><p>Marketing Coordinator</p></div>
+            </div>
+        <section id="reviews">
+            <h2>Reviews</h2>
+            <p>4.7 Sterren op Google</p>
+            <p>Wat onze klanten zeggen:</p>
+            <ul>
+                <li>"Geweldige service en snelle reparatie!" - Jan</li>
+                <li>"Zeer tevreden met mijn nieuwe telefoon!" - Petra</li>
+                <li>"Professioneel en vriendelijk personeel." - Klaas</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contacteer ons</h2>
+            <p>Email: <a href="mailto:info@im-mobile.nl">info@im-mobile.nl</a></p>
+            <p>Telefoon: <a href="tel:+310523255001">+31 0523 255 001</a></p>
+            <p>Adres: Oosteinde 5A, 7772 CA Hardenberg</p>
+            <p>Google Maps: <a href="https://www.google.com/maps/place/Telefoonwinkel+Hardenberg+IM-Mobile+telefoon+reparatie/@52.5755042,6.6196178,209m/data=!3m1!1e3!4m6!3m5!1s0x47c801c7200c5a03:0x91ebab6ee9c0574b!8m2!3d52.5755537!4d6.6201239!16s%2Fg%2F11bxj9nxvm?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D">Bekijk op kaart</a></p>
+        </section>
+        <section id="social-media">
+            <h2>Volg ons op sociale media</h2>
+            <ul>
+                <li><a href="https://www.facebook.com/immobile.nl/">Facebook</a></li>
+                <li><a href="https://www.instagram.com/immobilehardenberg/">Instagram</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 IM-Mobile. Alle rechten voorbehouden.</p>
+    </footer>
+</body>
+</html>

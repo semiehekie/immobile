@@ -1,0 +1,167 @@
+/* Algemene styling */
+:root {
+    --primary-color: #007bff; /* Een mooie blauwe kleur voor accenten */
+    --secondary-color: #f8f9fa; /* Lichte achtergrondkleur voor secties */
+    --text-color: #1c2024; /* Donkere tekstkleur */
+    --light-text-color: #e7e7e7; /* Lichtere tekstkleur voor minder belangrijke teksten */
+    --heading-color: #3f4449; /* Kleur voor koppen */
+    --white: #ffffff; /* Witte kleur */
+    --border-color: #dee2e6; /* Kleur voor randen */
+}
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    margin-bottom: 0.8em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header styling */
+header {
+    background-color: var(--heading-color);
+    color: var(--white);
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    vertical-align: middle;
+}
+
+header h1 {
+    color: var(--white);
+    margin: 0;
+    font-size: 2.5em;
+    padding-right: 24px;
+    letter-spacing: 2px;
+    vertical-align: middle;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    flex-wrap: wrap; /* Voor kleinere schermen */
+    vertical-align: middle;
+}
+
+header nav ul li a {
+    color: var(--white);
+    font-weight: normal;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    vertical-align: middle;
+}
+
+header nav ul li a:hover, header nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main content styling */
+
+main {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+section {
+    background-color: var(--secondary-color);
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: var(--primary-color);
+    font-size: 2em;
+    position: relative;
+}
+
+
+/* Telefoon selectie dropdowns */
+.telefoon-selectie {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.dropdown-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.dropdown-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.dropdown-group select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+}
+
+.dropdown-group select:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.dropdown-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .telefoon-selectie {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .dropdown-group {
+    min-width: 100%;
+  }
+}
